@@ -110,7 +110,7 @@
       
       button.onclick = function () {
         if (textarea.value !== "") {
-          messageDiv.innerHTML = messages[Math.floor(Math.random() * messages.length)];
+          messageDiv.innerHTML = "<strong>Thanks for not posting:</strong><br />" + messages[Math.floor(Math.random() * messages.length)];
           textarea.value = "";
         } else {
           messageDiv.innerHTML = "You aren't even really trying."
