@@ -109,8 +109,14 @@
       var textarea = document.getElementsByTagName("textarea")[0];
       var messageDiv = document.getElementById("message");
       
+      if (window.location.search === "?m=honeybunny") {
+        textarea.value = "Paige Salter is the best girlfriend in the world.";
+      }
+      
       button.onclick = function () {
-        if (textarea.value !== "") {
+        if ( textarea.value.toLowerCase().search("paige salter is the best girlfriend in the world") !== -1 ) {
+          messageDiv.innerHTML = "THAT should be shouted from the rooftops. Love you, Paige."
+        } else if (textarea.value !== "") {
           messageDiv.innerHTML = "<strong>Thanks for not posting:</strong><br />" + messages[Math.floor(Math.random() * messages.length)];
           textarea.value = "";
         } else {
